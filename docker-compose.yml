@@ -1,0 +1,25 @@
+version: '3.3'
+services:
+  db:
+    image: postgres
+    restart: always
+    container_name: postgers
+    environment:
+      - POSTGRES_USER=${DBUSERNAME}
+      - POSTGRES_PASSWORD=${DBPASSWORD}
+      # - POSTGRES_DB=${DBNAME}
+      # - POSTGRES_USER=default
+      # - POSTGRES_PASSWORD=1234
+      # - POSTGRES_USER=serv
+      # - POSTGRES_DB=enhancer
+      # - POSTGRES_PASSWORD=1234
+    # volumes:
+    #   - ./database/initialization.sql:/docker-entrypoint-initdb.d/init.sql
+    #   - ./.docker/db:/var/lib/postgresql/data/
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 5000:8080
+      
