@@ -1,4 +1,4 @@
-module github.com/dyleme/social-enhancer
+module github.com/dyleme/second-brain
 
 go 1.18
 
