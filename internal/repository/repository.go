@@ -1,4 +1,4 @@
-package main
+package repository
 
 import (
 	"database/sql"
@@ -20,8 +20,8 @@ type DBConfig struct {
 // Constuctor to the postgres database.
 func NewPostgresDB(conf *DBConfig) (*sql.DB, error) {
 	fmt.Println(conf)
-	connStr := fmt.Sprintf(" port=%s user=%s password=%s dbname=%s sslmode=%s",
-		conf.Port, conf.UserName, conf.Password, conf.DBName, conf.SSLMode)
+	connStr := fmt.Sprintf("host=%s port=%s user=%s password=%s database=%s sslmode=%s",
+		conf.Host, conf.Port, conf.UserName, conf.Password, conf.DBName, conf.SSLMode)
 
 	fmt.Println(connStr)
 	db, err := sql.Open("postgres", connStr)

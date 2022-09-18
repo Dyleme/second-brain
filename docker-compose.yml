@@ -7,7 +7,9 @@ services:
     environment:
       - POSTGRES_USER=${DBUSERNAME}
       - POSTGRES_PASSWORD=${DBPASSWORD}
-      # - POSTGRES_DB=${DBNAME}
+      - POSTGRES_DB=${DBNAME}
+    ports:
+      - 5432:5432
       # - POSTGRES_USER=default
       # - POSTGRES_PASSWORD=1234
       # - POSTGRES_USER=serv
